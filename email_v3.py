@@ -103,3 +103,5 @@ except:
     print("Fail to send email!")
     print("Check your login credentials or recipent email.")
     # https://www.youtube.com/watch?v=JRCJ6RtE3xU
+
+# End of script
