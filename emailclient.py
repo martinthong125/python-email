@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Email Client by Martin Thong, version 1.3
+Email Client by Martin Thong, version 1.4
 Features:
 1. Hide user email and password. Stored under environment variables
 2. Get user to key in recipent email, subject title and body of email
-3. Check for validity of email address
+3. Check for validity of email address using regex
 4. Option to change subject title and body of email
 5. Preview before sending email
 6. Option to cancel sending email
@@ -13,6 +13,7 @@ Features:
 
 import os
 import smtplib
+import re
 
 
 def get_email():
@@ -24,7 +25,8 @@ def get_email():
     """
 
     email = input("Enter the recipent email address: ")
-    while email.count("@") != 1 or email.count(".") < 1 or email.count(" ") > 0:
+    while re.fullmatch(email_regex, email) == None:
+        print("You have entered an invalid email address.")
         email = input("Enter a valid recipent email address: ")
     return email
 
@@ -108,6 +110,9 @@ EMAIL_ADDRESS = os.environ.get("EMAIL_ID")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASS")
 # print(EMAIL_ADDRESS)
 # print(EMAIL_PASSWORD)
+
+# criteria for recipient email address
+email_regex = r"\b[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}\b"
 
 try:
     # Testing code through localhost before actual sending
