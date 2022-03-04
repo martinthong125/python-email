@@ -1,6 +1,6 @@
-#Using Python to send email
+Using Python to send email
 
-<h1>This is a challenge issued by my instructor. </h1>
+This is a challenge issued by my instructor.
 
 I am a SMTP email client that is written in python. You can 
 use me to send email to anyone. You can find me easily online. 
