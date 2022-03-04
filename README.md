@@ -1,3 +1,5 @@
+#Using Python to send email
+
 <h1>This is a challenge issued by my instructor. </h1>
 
 I am a SMTP email client that is written in python. You can 
